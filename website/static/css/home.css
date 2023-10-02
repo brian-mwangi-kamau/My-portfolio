@@ -1,0 +1,291 @@
+@media (min-width: 100px) and (max-width: 900px) {
+    body, html {
+        margin: 0;
+        padding: 0;
+        background-color: #e1d9d9;
+    }
+
+    /* Style for the dashboard container */
+    .dashboard-container {
+        background-color: #e1d9d9;
+        padding: 20px;
+    }
+
+    /* Style for the top bar with menu and notifications icons */
+    .top-bar {
+        height: 26px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #e5e0e0;
+        padding: 10px 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+
+    /* Style for the menu bar container */
+    .menu-bar {
+        display: flex;
+        align-items: center;
+    }
+
+    /* Style for the menu icon/button */
+    .menu-icon {
+        cursor: pointer;
+        padding: 5px 10px;
+        background-color: #555;
+        border-radius: 4px;
+    }
+
+    .menu-icon i {
+        margin-right: 5px;
+    }
+
+    .top-bar .date {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    .menu-icon .fa-times {
+        display: none;
+    }
+
+    /* Style for the menu links */
+    .menu-links {
+        display: none;
+        position: absolute;
+        top: 110%;
+        right: 3%;
+        background-color: #ada1a1;
+        width: 110px;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        padding: 5px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .menu-links ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .menu-links li {
+        margin-bottom: 3px;
+    }
+
+    .menu-links a {
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        text-decoration: none;
+        color: #fff;
+        transition: color 0.2s;
+    }
+
+    .menu-links a:hover {
+        color: #00bcd4;
+    }
+
+
+    .about-me {
+        margin-top: 100px;
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    .about-me h1 {
+        text-align: center;
+        margin-bottom: -10px !important;
+    }
+
+    .about-me .title {
+        font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        text-align: center;
+        margin-bottom: 40px !important;
+    }
+
+    .about-section p {
+        font-family:Arial, Helvetica, sans-serif;
+        font-weight:bold;
+        font-size:medium;
+    }
+
+
+    /* Styles for the technologies container */
+    .technologies {
+        margin-top: -30px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 10px;
+    }
+
+    /* Styles for the list of technologies */
+    .tech-list {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    /* Styles for each technology item */
+    .tech-item {
+        background-color: #555;
+        color: #fff;
+        padding: 5px;
+        margin: 5px;
+        border: 5px solid rgb(75, 72, 72);
+        border-radius: 10px;
+        font-weight: bold;
+        text-align: center;
+        white-space: nowrap;
+        transition: background-color 0.3s;
+    }
+
+    /* Hover effect for each technology item */
+    .tech-item:hover {
+        background-color: #353434;
+    }
+
+
+    /* Style for the social icons container */
+    .social-icons {
+        display: flex;
+        justify-content: space-around;
+        max-width: 200px;
+        margin: 0 auto;
+    }
+
+    /* Style for the individual social icon links */
+    .social-icons a {
+        text-decoration: none;
+        color: #333;
+        font-size: 24px;
+        margin: 10px;
+    }
+
+    /* Style for the links */
+    .link-github i {
+        color: #f1f5f8;
+        background-color: #333;
+        padding: 10px;
+        border-radius: 50%;
+    }
+
+    .linkedin-link i {
+        color: #f4f7f8;
+        background-color: #333;
+        padding: 10px;
+        border-radius: 50%;
+    }
+
+    .email-link i {
+        color: #f5f7f8;
+        background-color: #333;
+        padding: 10px;
+        border-radius: 50%;
+    }
+
+
+    .heading h1 {
+        text-align: center;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        font-size: large;
+    }
+
+
+    /* Style for the project container */
+    .container-projects {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* Style for the heading */
+    .heading {
+        margin: 10px 0;
+    }
+
+    /* Style for each project card */
+    .project-card {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 10px 0;
+    }
+
+    /* Style for the project image and title */
+    .project-image {
+        position: relative;
+        width: 300px; /* Adjust the image width as needed */
+    }
+
+    .project-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .project-title {
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        font-size: medium;
+        position: absolute;
+        top: -5px;
+        left: 10px;
+        background-color: rgba(0, 0, 0, 0.5); /* Background color for title */
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+
+    /* Style for the project links */
+    .project-links {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Background color for links */
+        padding: 10px 0;
+        border-radius: 10px;
+    }
+
+    .link {
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        font-size: small;
+        color: #fff;
+        text-decoration: none;
+        padding: 5px 10px;
+        margin-left: 13px;
+        margin-right: 13px;
+        border-radius: 5px;
+    }
+
+    /* Style for individual link backgrounds */
+    .github-link {
+        background-color: #007acc; /* GitHub link background color */
+    }
+
+    .docs-link {
+        background-color: #00bcd4; /* Docs link background color */
+    }
+
+    .hosted-link {
+        background-color: #555;
+    }
+
+    .no-data {
+        background-color: aliceblue;
+        padding: 80px;
+        border: 2px dotted gray;
+        border-radius: 10px;
+    }
+
+    .footer {
+        margin-top: -3px !important;
+        margin-bottom: -1px !important;
+        text-align: center;
+    }
+
+}

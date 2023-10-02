@@ -1,0 +1,176 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Brian Mwangi</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}?v=1.1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css" integrity="sha512-W/zrbCncQnky/EzL+/AYwTtosvrM+YG/V6piQLSe2HuKS6cmbw89kjYkp3tWFn1dkWV7L1ruvJyKbLz73Vlgfg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Croissant+One&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="dashboard-container">
+            <!-- The navbar -->
+            <div class="top-bar">
+                <div class="date" id="date"></div>
+
+                <div class="menu-bar">
+                    <div class="menu-icon" id="menu-icon">
+                        <i class="fa fa-bars"></i>
+                        <i class="fa fa-times"></i>
+                    </div>
+                    
+                    <div class="menu-links" id="menu-links">
+                        <ul>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#projects">Projects</a></li>
+                            <li><a href="https://brayo.hashnode.dev" target="_blank">Blog</a></li>
+                            <li><a href="#">Resume <i class="fa-solid fa-download" style="color: darkblue;"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-me" id="about">
+                <h1>Brian Mwangi</h1>
+                <p class="title">Junior Backend Developer</p>
+                <div class="about-section">
+                    <p>Over the past year, I've been on an exciting journey, diving deep into the realm of backend development.
+                        I've honed my skills, tackled challenging problems, and built software that's ready to make an impact.
+                    
+                        Now, I'm on the lookout for on-site internships that will allow me to take my skills to the next level.
+                        I'm eager to collaborate with experienced professionals, soak up knowledge, and contribute to exciting projects.
+                    
+                        I have proficiency in a stack of powerful technologies, including:</p>
+                </div>
+                <div class="technologies">
+                    <ul class="tech-list">
+                        <li class="tech-item">Python</li>
+                        <li class="tech-item">Django</li>
+                        <li class="tech-item">MySQL</li>
+                        <li class="tech-item">Git</li>
+                        <li class="tech-item">GitHub</li>
+                        <li class="tech-item">HTML/CSS</li>
+                    </ul>
+                </div>
+                <div class="social-icons">
+                    <a class="link-github" href="https://github.com/brian-mwangi-kamau"><i class="fa-brands fa-github"></i></a>
+                    <a class="linkedin-link" href="https://linkedin/in/brian-mwangi-kamau"><i class="fa-brands fa-linkedin"></i></a>
+                    <a class="email-link" href="mailto:brianmwangikamau4@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+                
+            </div>
+
+            <div class="container-projects" id="projects">
+                <div class="heading">
+                    <h1>Projects</h1>
+                    <p class="sub">These projects are available on <a href="https://github.com/brian-mwangi-kamau" style="text-decoration: none;">GitHub</a></p>
+                </div>
+                
+                {% if projects %}
+                    {% for project in projects %}
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="{{ project.image.url }}" alt="{{ project.title }}">
+                            <h2 class="project-title">{{ project.title }}</h2>
+                        </div>
+            
+                        <div class="project-links">
+                            {% if project.github_link %}
+                                <a class="link github-link" href="{{ project.github_link }}" target="_blank">GitHub</a>
+                            {% endif %}
+                            {% if project.documentation_link %}
+                                <a class="link docs-link" href="{{ project.documentation_link }}" target="_blank">Docs</a>
+                            {% endif %}
+                            {% if project.hosted_link %}
+                            <a class="link hosted-link" href="{{ project.hosted_link }}" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="no-data">
+                        <p class="">No projects to show</p>
+                    </div>
+                {% endif %}
+            </div>
+            
+            <div class="footer">
+                <p>Brian Mwangi | <span id="current-year"></span></p>
+            </div>
+
+        </div>
+    </body>
+
+    <script>
+        // Get the current year
+var currentYear = new Date().getFullYear();
+
+// Update the element with the current year
+document.getElementById("current-year").textContent = currentYear;
+
+    </script>
+
+
+    <script>
+        function updateDayNight() {
+            const now = new Date();
+            const hour = now.getHours();
+    
+            const dayNightIcon = document.getElementById('day-night-icon');
+            const dateElement = document.getElementById('date');
+    
+            if (hour >= 6 && hour < 18) {
+                // dayNightIcon.innerText = '🌞';
+                dateElement.innerText = formatDate(now);
+            } else {
+                // dayNightIcon.innerText = '🌚';
+                dateElement.innerText = formatDate(now);
+            }
+        }
+    
+        function formatDate(date) {
+            const month = (date.getMonth() + 1).toString().padStart(2, '0');
+            const day = date.getDate().toString().padStart(2, '0');
+            return `${day}/${month}`;
+        }
+    
+        updateDayNight();
+        setInterval(updateDayNight, 60000);
+    </script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+    var menuIcon = $("#menu-icon");
+    var menuLinks = $("#menu-links");
+    
+    menuIcon.click(function() {
+        menuLinks.slideToggle(); // Toggle the visibility of menu links
+        menuIcon.find(".fa-bars, .fa-times").toggle(); // Toggle the 'Menu' and 'X' icons
+    });
+    
+    // Close the menu when any part of the screen is clicked/touched
+    $(document).click(function(event) {
+        if (!$(event.target).closest(".menu-bar").length) {
+            menuLinks.slideUp();
+            menuIcon.find(".fa-bars").show();
+            menuIcon.find(".fa-times").hide();
+        }
+    });
+    
+    // Prevent the menu from closing when clicking inside the menu
+    $(".menu-bar").click(function(event) {
+        event.stopPropagation();
+    });
+});
+</script>
+
+
+</html>
